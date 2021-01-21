@@ -25,3 +25,6 @@ If applicable, add screenshots or videos to help explain your problem.
 
 **Additional context**
 Add any other context about the problem here.
+
+**Adding Labels**
+At the end add any relevant labels about the bug in the side bar. Make sure to include the type of bug, discipline and any other relevant labels.
