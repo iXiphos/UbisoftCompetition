@@ -7,8 +7,7 @@ assignees: ''
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
+**Describe the Feature you would like to have added**
 A clear and concise description of what the problem is. Ex. Increase Movement Speed by.../Add Screen Shake
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+**Add any additional information here**
