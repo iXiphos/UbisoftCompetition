@@ -7,7 +7,8 @@
 
 AMonsterGameState::AMonsterGameState()
 {
-
+	sec = 59;
+	min = 9;
 }
 
 void AMonsterGameState::BeginPlay()
@@ -21,14 +22,14 @@ void AMonsterGameState::BeginPlay()
 void AMonsterGameState::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("This is an on screen message!"));
+	
 
 }
 
 
 void AMonsterGameState::UpdateTimer()
 {
-	GetWorld()->GetTimerManager().SetTimer(UnusedHandle, this, &AMonsterGameState::CountDown, 1.0f, true);
+	GetWorld()->GetTimerManager().SetTimer(UnusedHandle, this, &AMonsterGameState::CountDown, countDownRate, true);
 }
 
 void AMonsterGameState::CountDown_Implementation()
@@ -44,7 +45,7 @@ void AMonsterGameState::CountDown_Implementation()
 	{
 		GetWorld()->GetTimerManager().ClearTimer(UnusedHandle);
 	}
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("This is an on screen message!"));
+	
 }
 
 
@@ -54,4 +55,15 @@ void AMonsterGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
 
 	DOREPLIFETIME(AMonsterGameState, sec);
 	DOREPLIFETIME(AMonsterGameState, min);
+}
+
+void AMonsterGameState::IncrementCountDownRate_Implementation()
+{
+	countDownRate += 6;
+
+	GetWorld()->GetTimerManager().ClearTimer(UnusedHandle);
+	GetWorld()->GetTimerManager().SetTimer(UnusedHandle, this, &AMonsterGameState::CountDown, countDownRate, true);
+
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT(countDownRate));
+
 }
