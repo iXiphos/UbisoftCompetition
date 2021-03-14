@@ -59,7 +59,7 @@ void AMonsterGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
 
 void AMonsterGameState::IncrementCountDownRate_Implementation()
 {
-	countDownRate *= 0.60;
+	countDownRate *= 0.95;
 
 	GetWorld()->GetTimerManager().ClearTimer(UnusedHandle);
 	GetWorld()->GetTimerManager().SetTimer(UnusedHandle, this, &AMonsterGameState::CountDown, countDownRate, true);
