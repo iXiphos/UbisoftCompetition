@@ -24,7 +24,7 @@ public:
 	UPROPERTY(BlueprintReadOnly, Replicated)
 	int sec;
 
-	
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Replicated)
 	float countDownRate = 1.0;
 
 

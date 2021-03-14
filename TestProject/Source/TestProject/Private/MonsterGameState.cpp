@@ -59,11 +59,11 @@ void AMonsterGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
 
 void AMonsterGameState::IncrementCountDownRate_Implementation()
 {
-	countDownRate += 6;
+	countDownRate *= 0.60;
 
 	GetWorld()->GetTimerManager().ClearTimer(UnusedHandle);
 	GetWorld()->GetTimerManager().SetTimer(UnusedHandle, this, &AMonsterGameState::CountDown, countDownRate, true);
 
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT(countDownRate));
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
 
 }
