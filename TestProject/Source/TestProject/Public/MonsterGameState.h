@@ -18,11 +18,15 @@ public:
 	// Sets default values for this actor's properties
 	AMonsterGameState();
 
-	UPROPERTY(Replicated)
+	UPROPERTY(BlueprintReadOnly, Replicated)
 	int min;
 
-	UPROPERTY(Replicated)
+	UPROPERTY(BlueprintReadOnly, Replicated)
 	int sec;
+
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Replicated)
+	float countDownRate = 1.0;
+
 
 	FTimerHandle UnusedHandle;
 
@@ -41,5 +45,8 @@ public:
 	void CountDown();
 
 	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
+	UFUNCTION(BlueprintCallable, Server, Reliable)
+		void IncrementCountDownRate();
 
 };
