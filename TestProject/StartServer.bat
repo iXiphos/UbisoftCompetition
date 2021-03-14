@@ -1,1 +1,1 @@
-start Saved\StagedBuilds\WindowsServer\UbisoftProjectServer.exe -log
+start Saved\StagedBuilds\WindowsServer\TestProjectServer.exe -log
