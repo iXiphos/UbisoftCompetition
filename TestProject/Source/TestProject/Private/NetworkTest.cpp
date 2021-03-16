@@ -32,7 +32,7 @@ void ANetworkTest::Test()
 
 	if (world != nullptr)
 	{
-		FString ip = FString("35.245.105.119");
+		FString ip = FString("127.0.0.1");
 
 		GEngine->SetClientTravel(world, *ip, ETravelType::TRAVEL_Relative);
 	}
