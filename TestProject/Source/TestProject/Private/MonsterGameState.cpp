@@ -64,6 +64,6 @@ void AMonsterGameState::IncrementCountDownRate_Implementation()
 	GetWorld()->GetTimerManager().ClearTimer(UnusedHandle);
 	GetWorld()->GetTimerManager().SetTimer(UnusedHandle, this, &AMonsterGameState::CountDown, countDownRate, true);
 
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
+	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
 
 }
