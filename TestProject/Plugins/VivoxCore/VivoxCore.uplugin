@@ -1,0 +1,48 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0.3",
+	"FriendlyName": "vivoxCore",
+	"Description": "Vivox Blueprint Implementation",
+	"Category": "eelDev Plugins",
+	"CreatedBy": "hulken",
+	"CreatedByURL": "https://eeldev.com",
+	"DocsURL": "https://eeldev.com/index.php/vivoxcore/",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/d4d29cc6d06f484b9e02caa32b1acf8f",
+	"SupportURL": "https://eeldev.com/index.php/vivoxcore/",
+	"EngineVersion": "4.26.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "VivoxCore",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"WhitelistPlatforms": [
+				"Win32",
+				"Win64",
+				"XboxOne",
+				"PS4",
+				"Mac",
+				"IOS",
+				"Switch",
+				"Android",
+				"Linux"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "VivoxVoiceChat",
+			"Enabled": true
+		},
+		{
+			"Name": "OnlineSubsystem",
+			"Enabled": true
+		},
+		{
+			"Name": "OnlineSubsystemUtils",
+			"Enabled": true
+		}
+	]
+}

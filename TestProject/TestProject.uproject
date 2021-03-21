@@ -17,6 +17,15 @@
 		{
 			"Name": "ModelingToolsEditorMode",
 			"Enabled": true
+		},
+		{
+			"Name": "VivoxCore",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/d4d29cc6d06f484b9e02caa32b1acf8f"
+		},
+		{
+			"Name": "VivoxVoiceChat",
+			"Enabled": true
 		}
 	]
 }
