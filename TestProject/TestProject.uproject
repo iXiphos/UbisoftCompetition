@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{F11F179B-40C6-7A64-22DA-7AB931FFEC31}",
+	"EngineAssociation": "{4E325121-4922-DB79-41E5-4093595861F9}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -16,6 +16,15 @@
 	"Plugins": [
 		{
 			"Name": "ModelingToolsEditorMode",
+			"Enabled": true
+		},
+		{
+			"Name": "VivoxCore",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/d4d29cc6d06f484b9e02caa32b1acf8f"
+		},
+		{
+			"Name": "VivoxVoiceChat",
 			"Enabled": true
 		}
 	]
