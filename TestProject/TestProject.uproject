@@ -1,0 +1,31 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{A63B6D30-4378-C67A-1EB3-EBB628AED474}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "TestProject",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true
+		},
+		{
+			"Name": "VivoxCore",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/d4d29cc6d06f484b9e02caa32b1acf8f"
+		},
+		{
+			"Name": "VivoxVoiceChat",
+			"Enabled": true
+		}
+	]
+}
