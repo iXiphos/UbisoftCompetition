@@ -37,6 +37,19 @@ void AMonsterGameState::CountDown_Implementation()
 	sec--;
 	if (sec <= 0)
 	{
+
+		if (min <= 0)
+		{
+			UWorld* World = GetWorld();
+			check(World);
+
+			while (World->GetFirstPlayerController() != nullptr)
+			{
+				World->GetFirstPlayerController()->ClientTravel(FString("EndLevel"),ETravelType::TRAVEL_Absolute);
+			}
+
+			NextScene(FString("LobbyLevel"), true);
+		}
 		sec = 59;
 		min--;
 	}
@@ -59,11 +72,21 @@ void AMonsterGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
 
 void AMonsterGameState::IncrementCountDownRate_Implementation()
 {
-	countDownRate *= 0.95;
+	countDownRate *= 0.85;
 
 	GetWorld()->GetTimerManager().ClearTimer(UnusedHandle);
 	GetWorld()->GetTimerManager().SetTimer(UnusedHandle, this, &AMonsterGameState::CountDown, countDownRate, true);
 
 	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
 
+}
+
+void AMonsterGameState::NextScene_Implementation(const FString& URL, bool bAbsolute)
+{
+	UE_LOG(LogGameMode, Log, TEXT("ProcessServerTravel: %s"), *URL);
+	UWorld* World = GetWorld();
+	check(World);
+	ENetMode NetMode = GetNetMode();
+
+	World->ServerTravel(URL, true, true);
 }
