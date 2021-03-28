@@ -49,4 +49,7 @@ public:
 	UFUNCTION(BlueprintCallable, Server, Reliable)
 		void IncrementCountDownRate();
 
+	UFUNCTION(BlueprintCallable, Server, Reliable)
+		void NextScene(const FString& URL, bool bAbsolute);
+
 };
